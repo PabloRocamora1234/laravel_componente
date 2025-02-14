@@ -8,14 +8,14 @@ use Illuminate\Http\Request;
 
 class ProfileController extends Controller
 {
-    // Obtener el perfil de un usuario por su ID
+    
     public function getProfileByUserId($userId)
     {
         $profile = Profile::where('user_id', $userId)->firstOrFail();
         return response()->json($profile);
     }
 
-    // Actualizar el perfil de un usuario
+    
     public function updateProfile(Request $request, $userId)
     {
         $profile = Profile::where('user_id', $userId)->firstOrFail();
